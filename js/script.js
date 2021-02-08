@@ -10,14 +10,12 @@ function searchMeal(e) {
 
     singleMealElement.innerHTML = '';
 
-    const term = search.value;
+    const sort = search.value;
 
-    if (term.trim()) {
-        fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${term}`)
+    if (sort.trim()) {
+        fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${sort}`)
             .then(res => res.json())
             .then(data => {
-                headingResult.innerHTML = `<h2>Search results for ${term}:</h2>`;
-
                 if (data.meals === null) {
                     headingResult.innerHTML = `There are no search results. Try again!`;
                 } else {
@@ -33,23 +31,23 @@ function searchMeal(e) {
             });
         search.value = '';
     } else {
-        alert('Please enter a search term');
+        alert('Please enter a search again');
     }
 }
 
-// Fetch meal by ID
+// Fetch meal 
 function getMealById(mealID) {
     fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${mealID}`)
         .then(res => res.json())
         .then(data => {
             const meal = data.meals[0];
 
-            addMealToDOM(meal);
+            addMeal(meal);
         });
 }
 
-// Add meal to DOM
-function addMealToDOM(meal) {
+// Add meal
+function addMeal(meal) {
     const ingredients = [];
 
     for (let i = 1; i <= 20; i++) {
@@ -75,7 +73,7 @@ function addMealToDOM(meal) {
     `;
 }
 
-// Event listeners
+// Event listener
 submit.addEventListener('submit', searchMeal);
 
 

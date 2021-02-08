@@ -61,7 +61,7 @@ button{
 
 .meals {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(6, 1fr);
     grid-gap: 20px;
     margin-top: 20px;
 }
@@ -111,7 +111,7 @@ button{
 }
 
 .single-meal img {
-    width: 300px;
+    width: 200px;
     margin: 15px;
     border: 4px #fff solid;
     border-radius: 2px;
@@ -119,7 +119,7 @@ button{
 
 .single-meal p {
     margin: 0;
-    line-height: 1.5;
+    line-height: 1.2;
 }
 
 .single-meal ul {
@@ -128,13 +128,9 @@ button{
 }
 
 .single-meal ul li {
-    border: 1px solid #ededed;
     border-radius: 5px;
-    background: #fff;
-    display: inline-block;
     color: #2d2013;
     font-size: 12px;
-    text-shadow: none;
     padding: 5px;
     margin: 0 5px 5px 0;
     font-weight: bold;
